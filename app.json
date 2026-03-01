@@ -1,0 +1,13 @@
+{
+  "expo": {
+    "name": "BookShelf",
+    "slug": "evaluation-bookshelf",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "scheme": "bookshelf",
+    "userInterfaceStyle": "dark",
+    "newArchEnabled": true,
+    "plugins": ["expo-router"],
+    "experiments": { "typedRoutes": true }
+  }
+}

@@ -1,0 +1,82 @@
+[
+  {
+    "id": "1",
+    "title": "Le Petit Prince",
+    "author": "Antoine de Saint-Exupéry",
+    "rating": 4.8,
+    "pages": 96,
+    "genre": "Conte",
+    "cover": "https://covers.openlibrary.org/b/id/12844454-M.jpg",
+    "description": "Un pilote d'avion, en panne dans le désert du Sahara, rencontre un petit garçon venu d'une autre planète. Ce conte philosophique aborde les thèmes de l'amitié, de l'amour et du sens de la vie à travers le regard innocent d'un enfant."
+  },
+  {
+    "id": "2",
+    "title": "1984",
+    "author": "George Orwell",
+    "rating": 4.7,
+    "pages": 328,
+    "genre": "Dystopie",
+    "cover": "https://covers.openlibrary.org/b/id/12648655-M.jpg",
+    "description": "Dans un monde totalitaire où Big Brother surveille chaque citoyen, Winston Smith tente de résister à la pensée unique. Un roman visionnaire sur la manipulation, la surveillance et la liberté individuelle."
+  },
+  {
+    "id": "3",
+    "title": "Dune",
+    "author": "Frank Herbert",
+    "rating": 4.6,
+    "pages": 688,
+    "genre": "Science-Fiction",
+    "cover": "https://covers.openlibrary.org/b/id/11153217-M.jpg",
+    "description": "Sur la planète désertique Arrakis, le jeune Paul Atreides doit affronter des intrigues politiques et des dangers mortels pour accomplir son destin. Une épopée de science-fiction mêlant écologie, politique et spiritualité."
+  },
+  {
+    "id": "4",
+    "title": "Harry Potter à l'école des sorciers",
+    "author": "J.K. Rowling",
+    "rating": 4.5,
+    "pages": 308,
+    "genre": "Fantasy",
+    "cover": "https://covers.openlibrary.org/b/id/14625829-M.jpg",
+    "description": "Le jour de ses onze ans, Harry Potter découvre qu'il est un sorcier. Il intègre Poudlard, l'école de sorcellerie, où l'attendent amitié, aventures et un terrible secret lié à son passé."
+  },
+  {
+    "id": "5",
+    "title": "L'Étranger",
+    "author": "Albert Camus",
+    "rating": 4.3,
+    "pages": 159,
+    "genre": "Roman",
+    "cover": "https://covers.openlibrary.org/b/id/8225261-M.jpg",
+    "description": "Meursault, un employé de bureau à Alger, commet un meurtre absurde sur une plage. À travers son procès, Camus explore l'indifférence, l'absurde et la condition humaine."
+  },
+  {
+    "id": "6",
+    "title": "Fondation",
+    "author": "Isaac Asimov",
+    "rating": 4.4,
+    "pages": 256,
+    "genre": "Science-Fiction",
+    "cover": "https://covers.openlibrary.org/b/id/6998933-M.jpg",
+    "description": "Le mathématicien Hari Seldon prédit la chute de l'Empire Galactique. Pour préserver le savoir, il crée la Fondation aux confins de la galaxie. Le début d'une saga monumentale."
+  },
+  {
+    "id": "7",
+    "title": "Fahrenheit 451",
+    "author": "Ray Bradbury",
+    "rating": 4.2,
+    "pages": 176,
+    "genre": "Dystopie",
+    "cover": "https://covers.openlibrary.org/b/id/9273028-M.jpg",
+    "description": "Dans un futur où les livres sont interdits et brûlés, le pompier Guy Montag commence à remettre en question sa mission. Un hymne à la lecture et à la pensée critique."
+  },
+  {
+    "id": "8",
+    "title": "Le Seigneur des Anneaux",
+    "author": "J.R.R. Tolkien",
+    "rating": 4.9,
+    "pages": 1178,
+    "genre": "Fantasy",
+    "cover": "https://covers.openlibrary.org/b/id/14350216-M.jpg",
+    "description": "Le hobbit Frodon Sacquet doit détruire l'Anneau Unique dans les flammes de la Montagne du Destin pour sauver la Terre du Milieu du Seigneur des Ténèbres, Sauron."
+  }
+]
