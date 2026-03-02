@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import { getPopularBooks } from '../services/books';
+import { useEffect, useState } from "react";
+import { getPopularBooks } from "../services/books";
 
 /**
  * ╔══════════════════════════════════════════════════════════════╗
@@ -26,7 +26,47 @@ import { getPopularBooks } from '../services/books';
 
 export function useBooks() {
   // TODO 5 : Implémenter le hook complet
+  const [books, setBooks] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    let isMounted = true;
+
+    const loadData = async () => {
+      try {
+        setLoading(true);
+        setError(null);
+        const result = await getPopularBooks();
+        if (isMounted) {
+          setBooks(result);
+        }
+      } catch (err) {
+        if (isMounted) {
+          setError(err.message || "Une erreur est survenue");
+          console.error(
+            "Une erreur est survenue lors du chargement des données des films:",
+            err,
+          );
+        }
+      } finally {
+        if (isMounted) {
+          setLoading(false);
+        }
+      }
+    };
+
+    loadData();
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
 
   // Supprimer ce return temporaire une fois le hook implémenté
-  return { books: [], loading: false, error: 'TODO 5 : hook à implémenter', refresh: () => {} };
+  return {
+    books,
+    loading,
+    error,
+  };
 }

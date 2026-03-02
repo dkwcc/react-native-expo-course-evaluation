@@ -1,5 +1,4 @@
-import books from '../data/books.json';
-import { delay } from '../utils';
+import books from "../data/books.json";
 
 /**
  * ╔══════════════════════════════════════════════════════════════╗
@@ -23,6 +22,11 @@ import { delay } from '../utils';
  * @returns {Promise<Array>} Liste des livres
  */
 export async function getPopularBooks() {
+  try {
+    return books;
+  } catch (error) {
+    console.error("Error getPopularBooks:", error);
+  }
   // TODO 4a : Simuler un délai, puis retourner les livres
   // En cas d'erreur, throw une Error avec un message explicite
 }
