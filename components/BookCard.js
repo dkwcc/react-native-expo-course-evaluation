@@ -1,6 +1,5 @@
-import { Image, Pressable, StyleSheet } from "react-native";
+import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 import { Rating } from "./Rating";
-import { Colors } from "../constants/colors";
 
 /**
  * ╔══════════════════════════════════════════════════════════════╗
@@ -31,19 +30,21 @@ import { Colors } from "../constants/colors";
 export default function BookCard({ title, author, cover, rating, onPress }) {
   // TODO 1 : Remplacer ce return par votre composant
   return (
-    <Pressable style={styles.card} onPress={onPress}>
-      <Image
-        source={{
-          uri: cover,
-        }}
-      />
+    <Pressable onPress={onPress}>
       <View>
-        <Text numberOfLines={1}>{title}</Text>
-        <Text numberOfLines={1}>{author}</Text>
+        <Image
+          source={{
+            uri: cover,
+          }}
+        />
+      </View>
+
+      <View>
+        <Text numberOfLines={2}>{title}</Text>
 
         {rating > 0 && (
-          <View>
-            <Text>
+          <View style={styles.rating}>
+            <Text style={styles.ratingText}>
               <Rating rating={rating.toFixed(1)} /> {rating.toFixed(1)}
             </Text>
           </View>
@@ -54,9 +55,14 @@ export default function BookCard({ title, author, cover, rating, onPress }) {
 }
 
 const styles = StyleSheet.create({
-  card: {
-    backgroundColor: Colors.card,
-    borderRadius: 12,
-    overflow: "hidden",
+  rating: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 8,
+  },
+  ratingText: {
+    fontSize: 16,
+    color: "#F59E0B",
+    fontWeight: "600",
   },
 });

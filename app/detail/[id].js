@@ -1,7 +1,7 @@
-import { View, Text, Image, ScrollView, Pressable, StyleSheet } from 'react-native';
-import { useRouter } from 'expo-router';
-import { Colors } from '../../constants/colors';
-import books from '../../data/books.json';
+import { View, Text, StyleSheet } from "react-native";
+import { useLocalSearchParams, useRouter } from "expo-router";
+import { Colors } from "../../constants/colors";
+import { useBookDetails } from "../../hooks/useBookDetails";
 
 /**
  * ╔══════════════════════════════════════════════════════════════╗
@@ -74,7 +74,10 @@ import books from '../../data/books.json';
  */
 
 export default function DetailScreen() {
+  const { id } = useLocalSearchParams();
   const router = useRouter();
+
+  const { book, loading, error } = useBookDetails(id);
 
   // TODO 3 : Récupérer l'id et trouver le livre correspondant
 
@@ -85,7 +88,9 @@ export default function DetailScreen() {
   // TODO 13 : Ajouter <ReadingProgress /> si le livre est dans la liste
   return (
     <View style={styles.center}>
-      <Text style={styles.placeholder}>TODO 3 : Écran de détail à compléter</Text>
+      <Text style={styles.placeholder}>
+        TODO 3 : Écran de détail à compléter
+      </Text>
     </View>
   );
 }
@@ -93,8 +98,8 @@ export default function DetailScreen() {
 const styles = StyleSheet.create({
   center: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
     backgroundColor: Colors.background,
     padding: 24,
   },

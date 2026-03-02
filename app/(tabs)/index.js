@@ -1,8 +1,14 @@
-import { View, Text, StyleSheet, ActivityIndicator } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  ActivityIndicator,
+  FlatList,
+} from "react-native";
 import { useRouter } from "expo-router";
 import { Colors } from "../../constants/colors";
 import { useBooks } from "../../hooks/useBooks";
-import { useMemo } from "react";
+import BookCard from "../../components/BookCard";
 
 /**
  * ╔══════════════════════════════════════════════════════════════╗
@@ -45,28 +51,6 @@ import { useMemo } from "react";
 export default function HomeScreen() {
   const router = useRouter();
   const { books, loading, error, refresh } = useBooks();
-
-  const filtBooks = (books) => {
-    const filterBooks = new Map();
-
-    books.map((book) => {
-      const genre = book.genre;
-      if (!filterBooks.has(genre)) {
-        filterBooks.set({ genre, books: [book] });
-      } else {
-        const existingGenre = filterBooks.get(genre);
-        if (existingGenre) {
-          existingGenre.books.push(book);
-        }
-      }
-    });
-
-    return filterBooks;
-  };
-
-  const filteredBooks = useMemo(() => filtBooks(books));
-
-  console.log(filteredBooks);
 
   // TODO 8 : Extraire les genres avec useMemo et ajouter un state selectedGenre
   // TODO 9 : Ajouter un state pour l'option de tri sélectionnée
@@ -128,15 +112,19 @@ export default function HomeScreen() {
        * ║                                                              ║
        * ╚══════════════════════════════════════════════════════════════╝
        */}
-      {/* <FlatList
+      <FlatList
         data={books}
         renderItem={({ item, index }) => (
-          <ScrollView>
-            <Text>{item.title}</Text>
-          </ScrollView>
+          <BookCard
+            title={item.title}
+            author={item.author}
+            cover={item.cover}
+            onPress={handleBookPress(item.id)}
+            rating={item.rating}
+          />
         )}
         numColumns={2}
-      />*/}
+      />
     </View>
   );
 }

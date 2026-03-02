@@ -37,6 +37,15 @@ export async function getPopularBooks() {
  * @returns {Promise<Object>} Le livre trouvé
  */
 export async function getBookById(id) {
+  try {
+    books.forEach((book) => {
+      if (book.id === id) {
+        return book;
+      }
+    });
+  } catch (error) {
+    console.error("Error getBookById:", error);
+  }
   // TODO 4b : Simuler un délai, chercher le livre par id
   // Si non trouvé, throw new Error('Livre non trouvé')
 }
